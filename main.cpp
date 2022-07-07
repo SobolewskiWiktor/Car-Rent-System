@@ -48,6 +48,7 @@ int main()
           }
           case 2:
           {
+            get_cars();
             show_anable_car();
             break;
           }
