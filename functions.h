@@ -9,8 +9,6 @@
 #include "classes.h"
 using namespace std;
 
-#define STRING(num) STR(num)
-#define STR(num) #num
 
 Linked_List Cars_all;
 Linked_List Used_cars; 
