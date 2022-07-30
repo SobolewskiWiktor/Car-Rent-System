@@ -165,20 +165,21 @@ public:
 };
 class User
 {
-    protected:
-    string name; 
+protected:
+    string name;
     string surname;
     string email;
     string money;
-    string login; 
-    public:
+    string login;
+
+public:
     User(string Name, string Surname, string Email, string Money, string Login)
     {
         name = Name;
         surname = Surname;
         email = Email;
-        money = Money; 
-        login = Login; 
+        money = Money;
+        login = Login;
     }
     void set_name(string Name)
     {
@@ -214,7 +215,7 @@ class User
     }
     string get_money()
     {
-        return money; 
+        return money;
     }
     string get_login()
     {
@@ -259,14 +260,13 @@ struct Linked_List
     void add_not_avalable();
     void delete_fist_crs()
     {
-        Node * killerr = first;
+        Node *killerr = first;
         while (first != nullptr)
         {
             killerr = first;
-            first = first -> next;
+            first = first->next;
             delete killerr;
         }
-        
     }
 };
 void Linked_List ::add(string Price, string Name, string Manufacture, string Power, string Color, string Plates, string Battery, string Charging, string Fuel_type, string Fuel_status)
@@ -305,16 +305,16 @@ int Linked_List ::find_car(string Plates)
         if (finder->registration_car == Plates)
         {
             ofstream to_temp_file("temp_car.txt", ios::trunc);
-            to_temp_file << finder ->battery_status<<endl;
-            to_temp_file << finder ->charging_time<<endl;
-            to_temp_file << finder ->color<<endl;
-            to_temp_file << finder ->engine_power<<endl;
-            to_temp_file << finder ->fuel_status<<endl;
-            to_temp_file << finder ->fuel_type<<endl;
-            to_temp_file << finder ->manufacturer<<endl;
-            to_temp_file << finder ->name<<endl;
-            to_temp_file << finder ->price<<endl;
-            to_temp_file << finder ->registration_car<<endl;
+            to_temp_file << finder->battery_status << endl;
+            to_temp_file << finder->charging_time << endl;
+            to_temp_file << finder->color << endl;
+            to_temp_file << finder->engine_power << endl;
+            to_temp_file << finder->fuel_status << endl;
+            to_temp_file << finder->fuel_type << endl;
+            to_temp_file << finder->manufacturer << endl;
+            to_temp_file << finder->name << endl;
+            to_temp_file << finder->price << endl;
+            to_temp_file << finder->registration_car << endl;
             return 1;
         }
         finder = finder->next;
@@ -338,71 +338,69 @@ struct Linked_List_user
         string Name;
         string Surname;
         string Email;
-        string Money; 
+        string Money;
         string Login;
-        Noudle * next; 
-        Noudle(string name, string surname, string email, string money,string login, Noudle * N = nullptr)
+        Noudle *next;
+        Noudle(string name, string surname, string email, string money, string login, Noudle *N = nullptr)
         {
-           Name = name;
-           Surname = surname;
-           Email = email;
-           Money = money;
-           Login = login;
-           next = N; 
+            Name = name;
+            Surname = surname;
+            Email = email;
+            Money = money;
+            Login = login;
+            next = N;
         }
     };
-    Noudle * first = nullptr; 
-    void add_list(string name, string surname, string email, string money,string login)
+    Noudle *first = nullptr;
+    void add_list(string name, string surname, string email, string money, string login)
     {
-            Noudle * adder = new Noudle(name, surname, email, money, login);
-        if(first == nullptr)
+        Noudle *adder = new Noudle(name, surname, email, money, login);
+        if (first == nullptr)
         {
-        adder->next = first;
-        first = adder;
+            adder->next = first;
+            first = adder;
         }
         else
         {
-            Noudle * finder = first;
+            Noudle *finder = first;
             while (finder->next != nullptr)
             {
-                finder = finder -> next;
+                finder = finder->next;
             }
-            finder -> next = adder;
+            finder->next = adder;
         }
     }
     void show()
     {
-        Noudle * finder;
-        finder = first; 
+        Noudle *finder;
+        finder = first;
         while (finder != nullptr)
         {
-            cout<<"users: "<< finder->Name<<endl;
-            finder = finder -> next; 
+            cout << "users: " << finder->Name << endl;
+            finder = finder->next;
         }
-        
     }
     void save_to_file()
     {
         ofstream to_users_file("users.txt", ios::trunc);
-        Noudle * finder;
-        finder = first; 
+        Noudle *finder;
+        finder = first;
         while (finder != nullptr)
         {
-            to_users_file<<finder->Name<<";"<<finder->Surname<<";"<<finder->Email<<";"<<finder->Money<<";"<<finder->Login<<endl;
-            finder = finder -> next; 
+            to_users_file << finder->Name << ";" << finder->Surname << ";" << finder->Email << ";" << finder->Money << ";" << finder->Login << endl;
+            finder = finder->next;
         }
         to_users_file.close();
     }
     void delete_list()
     {
-        Noudle * killer; 
+        Noudle *killer;
         while (first != nullptr)
         {
             killer = first;
-            first = first -> next;
+            first = first->next;
             delete killer;
         }
-        
     }
 };
 

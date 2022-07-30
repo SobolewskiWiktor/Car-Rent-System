@@ -10,7 +10,7 @@ int main()
     int choose = 0;
     cout << endl;
     cout << "====" << endl;
-    cout << "1. Longin" << endl;
+    cout << "1. Login" << endl;
     cout << "2. Registration" << endl;
     cout << "Choose: ";
     cin >> choose;
@@ -22,7 +22,7 @@ int main()
       if (if_login == true)
       {
         cout << "===" << endl;
-        cout << "LOGIN SUCCESFULL" << endl;
+        cout << "LOGIN SUCCESSFUL" << endl;
         while (true)
         {
           create_user(login_to_all);
@@ -31,7 +31,7 @@ int main()
           cout << endl;
           cout << "===" << endl;
           cout << "1. Rent car" << endl;
-          cout << "2. Show anable cars" << endl;
+          cout << "2. Show available cars" << endl;
           cout << "3. Add money" << endl;
           cout << "4. Check money status" << endl;
           cout << "5. Add personal data" << endl;
@@ -41,27 +41,27 @@ int main()
           {
           case 1:
           {
-            get_cars();  
+            get_cars();
             rent_car();
-            save_users();  
+            save_users();
             break;
           }
           case 2:
           {
             get_cars();
-            show_anable_car();
+            show_available_cars();
             break;
           }
           case 3:
           {
             add_money();
             save_users();
-            break; 
+            break;
           }
           case 4:
           {
-            check_money_status(); 
-            break; 
+            check_money_status();
+            break;
           }
           case 5:
           {

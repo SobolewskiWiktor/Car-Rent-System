@@ -1,0 +1,4 @@
+# delete built files
+.exe
+.out
+.lib
